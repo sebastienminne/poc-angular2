@@ -29,3 +29,58 @@ Run `ng github-pages:deploy` to deploy to Github Pages.
 ## Further help
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## adding [primeng](http://www.primefaces.org/primeng/#/setup) to the project : 
+
+npm install primeng --save
+npm install primeui --save
+npm install --save font-awesome
+
+add style in index.html
+
+```html
+ <link rel="stylesheet" type="text/css" href="vendor/primeui/themes/omega/theme.css" />
+  <link rel="stylesheet" type="text/css" href="nodes_modules/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="vendor/primeui/primeui-ng-all.min.css" />
+```
+
+
+I had to do this manipulation :
+ 
+ 
+need to add primeng and primeui to angular-cli-build.js
+ 
+```javascript
+module.exports = function(defaults) {
+ return new Angular2App(defaults, {
+   vendorNpmFiles: [
+     'systemjs/dist/system-polyfills.js',
+     'systemjs/dist/system.src.js',
+     'zone.js/dist/**/*.+(js|js.map)',
+     'es6-shim/es6-shim.js',
+     'reflect-metadata/**/*.+(ts|js|js.map)',
+     'rxjs/**/*.+(js|js.map)',
+     '@angular/**/*.+(js|js.map)',
+     'primeng/**/*.js',
+     'primeui/**/*.css'
+   ]
+ });
+};
+```
+ 
+and change system-config.ts to use vendor and not nodes_modules
+
+```javascript
+/** Map relative paths to URLs. */
+const map: any = {
+    'primeng':                    'vendor/primeng'
+};
+
+/** User packages configuration. */
+const packages: any = {
+    'primeng':                    { defaultExtension: 'js'  }
+};
+
+
+```
+

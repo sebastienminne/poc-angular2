@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PasswordModule} from 'primeng/primeng';
 
 @Component({
   moduleId: module.id,
