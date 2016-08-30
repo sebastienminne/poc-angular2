@@ -45,7 +45,7 @@ add style in index.html
 ```
 
 
-I had to do this manipulation :
+I had to do this manipulation : explain on angular-cli [website](https://github.com/angular/angular-cli/wiki/3rd-party-libs)
  
  
 need to add primeng and primeui to angular-cli-build.js
