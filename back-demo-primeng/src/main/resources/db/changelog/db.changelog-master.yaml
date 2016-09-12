@@ -1,0 +1,3 @@
+databaseChangeLog:
+  - inlude:
+    file: /db/changelog/changeset-00001.yaml
